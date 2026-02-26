@@ -115,7 +115,7 @@ export function App() {
                 <div className="flex-1 border border-dashed border-neutral-700/60 bg-[#e9e3d7] p-2 text-center text-[11px] font-mono uppercase tracking-[0.18em] text-neutral-600">
                   <div className="mb-2 h-40 w-full border border-neutral-700/60 bg-neutral-200/60 sm:h-44">
                     <img
-                      src="https://2514247f-2831-4c5c-9ab6-3757161868db.selstorage.ru/my_cover_photo.JPG"
+                      src="https://2514247f-2831-4c5c-9ab6-3757161868db.selstorage.ru/Photo_me_HH.jpg"
                       alt="Александр Вечерский"
                       className="h-full w-full object-cover"
                     />
