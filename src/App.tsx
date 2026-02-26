@@ -58,7 +58,7 @@ export function App() {
             </p>
             <div>
               <h1 className="text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
-                Привет! Я — директор по маркетингу в IT и digital-продуктах.
+                Привет! Я Саша Вечерский — директор по маркетингу в IT и digital-продуктах.
               </h1>
               <p className="mt-3 text-sm leading-relaxed text-neutral-800 sm:text-[15px]">
                 Нахожу точки прорывного роста через эксперименты и аналитику, превращаю рекламный шум
@@ -120,7 +120,7 @@ export function App() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  Фото
+                  Саша Вечерский
                 </div>
                 <div className="flex-1 space-y-3 text-xs">
                   <div>
