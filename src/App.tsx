@@ -89,7 +89,7 @@ export function App() {
                 <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-neutral-700">
                   Роли
                 </div>
-                <div className="mt-1 font-semibold">CMO / Brand & PR / Product Marketing</div>
+                <div className="mt-1 font-semibold">CMO / PRD / Product Marketing Lead</div>
                 <div className="text-xs text-neutral-700">Стратегия, GTM и P&L</div>
               </div>
               <div className="border border-dashed border-neutral-700/50 bg-[#ffe0cf] px-3 py-2">
@@ -135,7 +135,7 @@ export function App() {
                       Основной фокус
                     </div>
                     <div className="font-semibold">IT / digital‑продукты</div>
-                    <div className="text-neutral-700">Travel‑tech, SaaS, AI, media</div>
+                    <div className="text-neutral-700">Cloud, SaaS / IaaS, AI, Media</div>
                   </div>
                   <div>
                     <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-neutral-600">
@@ -460,7 +460,7 @@ export function App() {
           <div className="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
             <div className="space-y-4 border border-neutral-900/50 bg-[#fff7e5] p-4 text-xs shadow-[3px_3px_0_rgba(0,0,0,0.6)]">
               <p className="text-sm leading-relaxed text-neutral-900">
-                Если вы ищете директора по маркетингу или лида digital-маркетинга для IT-продукта,
+                Если вы ищете директора по маркетингу или лида digital-маркетинга для IT-проекта,
                 напишите мне с кратким описанием задачи, стадии продукта и ключевых метрик.
               </p>
               <div className="space-y-1 text-[11px] font-mono uppercase tracking-[0.18em] text-neutral-700">
@@ -520,7 +520,7 @@ export function App() {
               </div>
 
               <div className="mt-2 border-t border-neutral-700 pt-3 text-[11px] text-neutral-300">
-                Резюме обновлено: 26 февраля 2026.
+                Резюме обновлено: 06 апреля 2026.
               </div>
             </div>
           </div>
