@@ -3,7 +3,7 @@ const NAV_ITEMS = [
   { id: "experience", label: "Опыт" },
   { id: "highlights", label: "Достижения" },
   { id: "skills", label: "Навыки" },
-  { id: "facts", label: "Факты" },
+  { id: "facts", label: "Рекомендации" },
   { id: "contacts", label: "Контакты" },
 ];
 
