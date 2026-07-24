@@ -11,10 +11,17 @@ export function Header() {
     setMobileOpen((v) => !v);
   }, []);
 
-  // Close mobile menu on link click
-  const handleClick = useCallback(() => {
-    setMobileOpen(false);
-  }, []);
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+      e.preventDefault();
+      setMobileOpen(false);
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    },
+    []
+  );
 
   // Track active section on scroll
   useEffect(() => {
@@ -117,69 +124,43 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
+      {/* ── Mobile dropdown menu ── */}
       {mobileOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/30 sm:hidden"
-          onClick={toggle}
-        />
-      )}
+        <nav
+          className="sm:hidden border-t border-neutral-200 bg-[#fff7e5] px-4 py-5 shadow-lg"
+          role="navigation"
+          aria-label="Мобильная навигация"
+        >
+          <ul className="space-y-1">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
+                  className={`touch-target flex items-center rounded border px-4 py-3 text-[13px] font-mono uppercase tracking-[0.14em] transition ${
+                    activeSection === item.id
+                      ? "border-neutral-900 bg-[#fff1c2] text-neutral-900 font-semibold"
+                      : "border-transparent text-neutral-700 hover:bg-[#fffdf8] hover:text-neutral-900"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-      {/* Mobile menu drawer */}
-      <div
-        className={`fixed top-0 right-0 z-50 h-full w-72 max-w-[85vw] border-l border-neutral-900/10 bg-[#fffdf8] shadow-xl transition-transform duration-300 sm:hidden ${
-          mobileOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex h-full flex-col pt-safe pb-safe">
-          {/* Close button */}
-          <div className="flex items-center justify-between border-b border-neutral-200 px-5 py-4">
-            <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center border border-neutral-900 bg-[#f94e3f] font-mono text-sm font-bold text-white">
-                AV
-              </div>
-              <div>
-                <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-neutral-600">
-                  Маркетинг / Продукт / Продажи
-                </div>
-                <div className="text-sm font-semibold">Александр Вечерский</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Nav links */}
-          <nav className="flex-1 overflow-y-auto px-5 py-4">
-            <ul className="space-y-1">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={handleClick}
-                    className={`touch-target flex items-center rounded border border-transparent px-3 py-3 text-[13px] font-mono uppercase tracking-[0.14em] transition ${
-                      activeSection === item.id
-                        ? "border-neutral-900 bg-[#fff1c2] text-neutral-900"
-                        : "text-neutral-700 hover:bg-[#fff7e5] hover:text-neutral-900"
-                    }`}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* CTA at bottom */}
-          <div className="border-t border-neutral-200 px-5 py-4">
+          {/* CTA button inside dropdown */}
+          <div className="mt-5 border-t border-dotted border-neutral-300 pt-4">
             <a
               href="#contacts"
-              onClick={handleClick}
+              onClick={(e) => handleNavClick(e, "contacts")}
               className="touch-target flex w-full items-center justify-center border border-neutral-900 bg-[#f94e3f] px-4 py-3 text-xs font-mono font-semibold uppercase tracking-[0.18em] text-white shadow-[2px_2px_0_rgba(0,0,0,0.75)]"
             >
               Связаться
             </a>
           </div>
-        </div>
-      </div>
+        </nav>
+      )}
     </header>
   );
 }
