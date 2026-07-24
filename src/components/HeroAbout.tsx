@@ -2,9 +2,9 @@ import { STAT_CARDS, CONTACTS } from "../data/resumeData";
 
 export function HeroAbout() {
   return (
-    <section id="about" className="grid gap-8 md:grid-cols-[minmax(0,3fr)_minmax(260px,2fr)] md:items-start">
-      {/* Main bio */}
-      <div className="space-y-6 rounded-none border border-neutral-900/40 bg-[#fff7e5] p-5 shadow-[4px_4px_0_rgba(0,0,0,0.5)]">
+    <section id="about" className="flex flex-col gap-6 md:grid md:gap-8 md:grid-cols-[minmax(0,3fr)_minmax(260px,2fr)] md:items-start">
+      {/* Main bio — second on mobile, first on desktop */}
+      <div className="order-2 md:order-1 space-y-6 rounded-none border border-neutral-900/40 bg-[#fff7e5] p-5 shadow-[4px_4px_0_rgba(0,0,0,0.5)]">
         <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-700">
           Маркетинговый стратег для амбициозных бизнесов
         </p>
@@ -12,16 +12,16 @@ export function HeroAbout() {
           <h1 className="text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
             Привет! Я Саша Вечерский — директор по маркетингу в IT и digital-продуктах.
           </h1>
-          <p className="mt-3 text-sm leading-relaxed text-neutral-800 sm:text-[15px]">
+          <p className="mt-3 text-[15px] leading-relaxed text-neutral-800">
             Нахожу точки прорывного роста через эксперименты и аналитику, превращаю рекламный шум
             в запоминающиеся бренд-истории.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-neutral-800 sm:text-[15px]">
+          <p className="mt-3 text-[15px] leading-relaxed text-neutral-800">
             18+ лет в маркетинге, PR и продуктовом менеджменте. Создаю и масштабирую IT-бренды,
             собираю команды, которые приносят результаты, выстраиваю целеполагание и аналитику,
             открываю новые рынки.
           </p>
-          <p className="mt-2 text-sm leading-relaxed text-neutral-800 sm:text-[15px]">
+          <p className="mt-2 text-[15px] leading-relaxed text-neutral-800">
             Помогаю цифровым продуктам расти за счёт управляемого маркетинга: от стратегии и
             юнит-экономики к операционной реализации. Выстраиваю коммерческие функции с нуля,
             совмещая маркетинг, продажи и продуктовый подход. Опыт в travel-tech, B2B SaaS,
@@ -53,12 +53,12 @@ export function HeroAbout() {
         </div>
       </div>
 
-      {/* Photo + contacts teaser (sidebar) */}
-      <aside className="space-y-4">
+      {/* Photo + contacts teaser — first on mobile, second on desktop */}
+      <aside className="order-1 md:order-2 space-y-4">
         <div className="border border-neutral-900/40 bg-[#fff7e5] p-3 shadow-[4px_4px_0_rgba(0,0,0,0.5)]">
           <div className="flex flex-col gap-3 sm:flex-row">
             <div className="flex-1 border border-dashed border-neutral-700/60 bg-[#e9e3d7] p-2 text-center text-[11px] font-mono uppercase tracking-[0.18em] text-neutral-600">
-              <div className="mb-2 h-40 w-full border border-neutral-700/60 bg-neutral-200/60 sm:h-44">
+              <div className="mb-2 aspect-[3/4] w-full max-h-[320px] border border-neutral-700/60 bg-neutral-200/60 sm:h-44 sm:max-h-none sm:aspect-auto">
                 <img
                   src="https://2514247f-2831-4c5c-9ab6-3757161868db.selstorage.ru/Photo_me_HH.jpg"
                   alt="Александр Вечерский"
