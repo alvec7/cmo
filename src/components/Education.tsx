@@ -2,26 +2,32 @@ import { EDUCATION } from "../data/resumeData";
 
 export function Education() {
   return (
-    <section id="education" className="section void">
-      <div className="pad section-head">
-        <div>
-          <div className="eyebrow">
-            <span className="num">04</span>
-            <span className="sep">/</span>
-            Обучение
+    <section id="education" className="section page-pad">
+      <div className="section-frame">
+        <div className="section-head section-head-split">
+          <div>
+            <div className="kicker-row">
+              <span className="label-bar">04 / EDUCATION</span>
+            </div>
+            <h2 className="section-heading">
+              <span>ИНСТРУМЕНТЫ</span>
+              <span>И МЫШЛЕНИЕ</span>
+            </h2>
           </div>
-          <h2 className="section-title">
-            <span className="line">Инструменты</span>
-            <span className="line">и мышление</span>
-          </h2>
+          <p className="section-intro">
+            Учусь там, где меняются инструменты: от продуктовой аналитики и growth до
+            генеративного AI.
+          </p>
         </div>
-      </div>
-      <div className="pad education">
-        {EDUCATION.map((x) => (
-          <div className="education-item" key={x}>
-            {x}
-          </div>
-        ))}
+
+        <div className="education-grid">
+          {EDUCATION.map((item, index) => (
+            <div className="education-item" key={item}>
+              <span className="education-index">0{index + 1}</span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

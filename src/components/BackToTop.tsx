@@ -1,2 +1,24 @@
 import { useEffect, useState } from "react";
-export function BackToTop() { const [visible,setVisible]=useState(false); useEffect(()=>{const f=()=>setVisible(scrollY>700); addEventListener('scroll',f,{passive:true}); return()=>removeEventListener('scroll',f)},[]); if(!visible)return null; return <button className="to-top" onClick={()=>scrollTo({top:0,behavior:'smooth'})} aria-label="Наверх">↑</button>; }
+
+export function BackToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 700);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <button
+      className="to-top pill"
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Вернуться наверх"
+    >
+      ↑ TOP
+    </button>
+  );
+}
