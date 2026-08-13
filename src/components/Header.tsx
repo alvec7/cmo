@@ -7,64 +7,75 @@ export function Header() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-      { rootMargin: "-20% 0px -70%" }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-18% 0px -72%" }
     );
+
     NAV_ITEMS.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
     });
+
     return () => observer.disconnect();
   }, []);
 
-  const nav = (mobile = false) => (
-    <>
-      {NAV_ITEMS.map((item) => (
-        <a
-          className={active === item.id ? "active" : ""}
-          onClick={() => setOpen(false)}
-          href={`#${item.id}`}
-          key={item.id}
-        >
-          {item.label}
-        </a>
-      ))}
-      {mobile && (
-        <a className="btn" href="#contacts" onClick={() => setOpen(false)}>
-          Обсудить задачу <span className="arr">↗</span>
-        </a>
-      )}
-    </>
-  );
+  const renderNav = () =>
+    NAV_ITEMS.map((item) => (
+      <a
+        className={active === item.id ? "active" : ""}
+        href={`#${item.id}`}
+        key={item.id}
+        aria-current={active === item.id ? "page" : undefined}
+        onClick={() => setOpen(false)}
+      >
+        <span className="arrow-glyph" aria-hidden="true">
+          ↳
+        </span>
+        {item.label}
+      </a>
+    ));
 
   return (
     <header className="site-header">
-      <div className="pad header-inner">
-        <a className="brand" href="#about" aria-label="Александр Вечерский, на главную">
-          <span className="brand-text">
-            Александр Вечерский
-            <small>Marketing leadership</small>
+      <div className="page-pad header-inner">
+        <a className="brand" href="#about" aria-label="Александр Вечерский — в начало">
+          <span className="brand-name">
+            ALEXANDER VECHERSKY<sup>®</sup>
           </span>
+          <span className="brand-role">CMO / GROWTH</span>
         </a>
-        <nav className="main-nav" aria-label="Основная навигация">{nav()}</nav>
-        <span className="nav-counter">
-          <span className="brand-mark">AV</span>
-          <span className="sep">·</span>
-          <span>0 / 14</span>
-        </span>
+
+        <nav className="main-nav" aria-label="Основная навигация">
+          {renderNav()}
+        </nav>
+
+        <div className="header-index" aria-label="Номер страницы">
+          <span>AV</span>
+          <span className="header-slash">/</span>
+          <span>00—06</span>
+        </div>
+
         <button
           className="menu-button"
-          onClick={() => setOpen(!open)}
-          aria-label="Открыть меню"
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          aria-label={open ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={open}
         >
-          <svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" strokeWidth="1">
-            <path d="M0 0.5h20M0 7h20M0 13.5h20" />
-          </svg>
+          <span>{open ? "CLOSE" : "MENU"}</span>
+          <span className="menu-lines" aria-hidden="true">
+            <i />
+            <i />
+          </span>
         </button>
       </div>
+
       <nav className={`mobile-nav ${open ? "open" : ""}`} aria-label="Мобильная навигация">
-        {open && nav(true)}
+        {open && renderNav()}
       </nav>
     </header>
   );

@@ -1,10 +1,10 @@
 export const NAV_ITEMS = [
-  { id: "about", label: "Обо мне" },
-  { id: "experience", label: "Опыт" },
-  { id: "highlights", label: "Достижения" },
-  { id: "skills", label: "Навыки" },
-  { id: "education", label: "Образование" },
-  { id: "contacts", label: "Контакты" },
+  { id: "about", label: "ABOUT" },
+  { id: "experience", label: "WORK" },
+  { id: "highlights", label: "RESULTS" },
+  { id: "skills", label: "SYSTEM" },
+  { id: "education", label: "EDUCATION" },
+  { id: "contacts", label: "CONTACT" },
 ];
 
 export const STAT_CARDS = [

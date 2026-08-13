@@ -2,48 +2,46 @@ import { EXPERIENCE } from "../data/resumeData";
 
 export function Experience() {
   return (
-    <section id="experience" className="section void">
-      <div className="pad section-head">
-        <div>
-          <div className="eyebrow">
-            <span className="num">01</span>
-            <span className="sep">/</span>
-            Практика
+    <section id="experience" className="section page-pad">
+      <div className="section-frame">
+        <div className="section-head section-head-split">
+          <div>
+            <div className="kicker-row">
+              <span className="label-bar">01 / WORK</span>
+            </div>
+            <h2 className="section-heading">
+              <span>ОПЫТ, КОТОРЫЙ</span>
+              <span>МОЖНО ИЗМЕРИТЬ</span>
+            </h2>
           </div>
-          <h2 className="section-title">
-            <span className="line">Опыт, который</span>
-            <span className="line">можно измерить</span>
-          </h2>
+          <p className="section-intro">
+            От запуска и масштабирования стартапов до построения маркетинговых систем
+            в больших технологических компаниях.
+          </p>
         </div>
-        <p className="section-note">
-          От запуска и масштабирования стартапов до построения маркетинговых систем
-          в больших технологических компаниях.
-        </p>
-      </div>
-      <div className="experience-list">
-        {EXPERIENCE.map((x) => (
-          <article className="pad experience-card" key={x.company}>
-            <div className="exp-aside">
-              <div className="exp-period">
-                {x.period}
-                <br />
+
+        <div className="experience-list">
+          {EXPERIENCE.map((item) => (
+            <article className="experience-card" key={item.company}>
+              <div className="exp-aside">
+                <span className="micro-label">{item.period}</span>
+                <span className="exp-industry">{item.industry}</span>
+                <a className="arrow-link" href={item.url} target="_blank" rel="noreferrer">
+                  <span aria-hidden="true">↳</span> {item.company}
+                </a>
               </div>
-              <div className="exp-industry">{x.industry}</div>
-              <a className="exp-company" href={x.url} target="_blank" rel="noreferrer">
-                {x.company} ↗
-              </a>
-            </div>
-            <div>
-              <h3 className="exp-role">{x.role}</h3>
-              <p className="exp-desc">{x.description}</p>
-              <ul className="achievement-list">
-                {x.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        ))}
+              <div className="exp-main">
+                <h3>{item.role}</h3>
+                <p className="body-copy">{item.description}</p>
+                <ul className="achievement-list">
+                  {item.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
