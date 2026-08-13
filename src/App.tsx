@@ -9,4 +9,21 @@ import { Contacts } from "./components/Contacts";
 import { Footer } from "./components/Footer";
 import { BackToTop } from "./components/BackToTop";
 
-export function App() { return <div className="site-shell"><Header /><main className="container"><HeroAbout /><Experience /><Highlights /><Skills /><Education /><Recommendations /><Contacts /></main><Footer /><BackToTop /></div>; }
+export function App() {
+  return (
+    <div className="site-shell">
+      <Header />
+      <main>
+        <HeroAbout />
+        <Experience />
+        <Highlights />
+        <Skills />
+        <Education />
+        <Recommendations />
+        <Contacts />
+      </main>
+      <Footer />
+      <BackToTop />
+    </div>
+  );
+}
