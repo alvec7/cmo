@@ -12,15 +12,12 @@ export function StickyMobileCTA() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-ink bg-paper sm:hidden pb-[env(safe-area-inset-bottom)]">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3">
-        <div className="truncate max-w-[50%] text-[12px] uppercase text-ink">
-          Александр Вечерский <span className="text-ink">· CMO</span>
+    <div className="sticky-cta sm:hidden">
+      <div className="sticky-inner">
+        <div className="truncate max-w-[50%] text-[11px] uppercase text-bone">
+          Александр Вечерский <span className="text-bone">· CMO</span>
         </div>
-        <a
-          href="#contacts"
-          className="flex items-center gap-2 border border-carbon px-4 py-2.5 text-[12px] uppercase text-ink transition-colors active:bg-carbon active:text-paper"
-        >
+        <a href="#contacts" className="btn">
           Связаться
         </a>
       </div>
