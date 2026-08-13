@@ -64,6 +64,7 @@ export function HeroAbout() {
           className="portrait-image"
           src="https://2514247f-2831-4c5c-9ab6-3757161868db.selstorage.ru/Photo_me_HH.jpg"
           alt="Александр Вечерский"
+          decoding="async"
         />
       </figure>
 
