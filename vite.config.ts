@@ -17,4 +17,8 @@ export default defineConfig({
     },
   },
   base: "/cmo/",
+  server: {
+    host: true,
+    allowedHosts: true,
+  },
 });

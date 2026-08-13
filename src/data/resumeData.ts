@@ -12,19 +12,16 @@ export const STAT_CARDS = [
     label: "Опыт",
     value: "18+ лет",
     sub: "Маркетинг, PR, продукт",
-    bg: "bg-[#fff1c2]",
   },
   {
     label: "Роли",
     value: "CMO / PRD / Product Marketing Lead",
     sub: "Стратегия, GTM и P&L",
-    bg: "bg-[#ffe7b8]",
   },
   {
     label: "Формат",
     value: "Полная занятость",
     sub: "Офис / гибрид / remote",
-    bg: "bg-[#ffe0cf]",
   },
 ];
 
