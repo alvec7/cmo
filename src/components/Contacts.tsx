@@ -15,8 +15,8 @@ export function Contacts() {
           <span className="label-bar">06 / CONTACT</span>
         </div>
         <h2 className="contact-heading">
-          <span>GET</span>
-          <span>IN TOUCH</span>
+          <span>Get in</span>
+          <span>touch</span>
         </h2>
 
         <div className="contact-grid">
